@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 class Squirrel(models.Model):
-    uni_squirrel_id = models.CharField(
+    unique_squirrel_id = models.CharField(
         help_text=_('Unique Squirrel Identification Number'),
         max_length = 255,
         primary_key = True,
@@ -29,13 +29,13 @@ class Squirrel(models.Model):
         help_text=_('Shift'),
         choices=SHIFT_CHOICES,
         max_length = 255,
-        blank = True,
+        blank = False,
     )
     
     date = models.DateField(
             help_text=_('Date'),
             null = True,
-            blank = True,
+            blank = False,
         )
 
     ADULT = 'Adult'
@@ -51,7 +51,7 @@ class Squirrel(models.Model):
             max_length=50,
             choices=AGE_CHOICES,
             null = True,
-            blank = True,
+            blank = False,
         )
 
     GRAY = 'Gray'
@@ -66,7 +66,7 @@ class Squirrel(models.Model):
 
 
 
-    fur_color = models.CharField(
+    primary_fur_color = models.CharField(
             help_text=_('Primary Fur Color'),
             max_length = 50,
             choices = COLOR_CHOICES,
