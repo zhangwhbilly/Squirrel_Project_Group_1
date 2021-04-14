@@ -25,8 +25,8 @@ def update_sighting(request, unique_squirrel_id):
         if form.is_valid():
             form.save()
             return redirect(f'sightings/{unique_squirrel_id}')
-        else:
-            form = SightingsForm(instance = squirrel_detail)
+    else:
+        form = SightingsForm(instance = squirrel_detail)
     context = {
         'form': form,
         'squirrel': squirrel_detail,
@@ -40,8 +40,8 @@ def create_sighting(request):
         if form.is_valid():
             form.save()
             return redirect("sightings/")
-        else:
-            form = SightingsForm()
+    else:
+        form = SightingsForm()
     context = {
         'form': form,
     }
