@@ -11,9 +11,9 @@ def index(request):
 
 
 def sightings(request):
-    Squirrels = Squirrel.objects.all()
+    squirrels = Squirrel.objects.all()
     context = {
-        'Squirrels': Squirrels,
+        'squirrels': squirrels,
     }
     return render(request, 'sightings/all_sightings.html', context)
 
