@@ -27,10 +27,12 @@ def update_sighting(request, unique_squirrel_id):
             return redirect(f'sightings/{unique_squirrel_id}')
     else:
         form = SightingsForm(instance = squirrel_detail)
+    
     context = {
         'form': form,
         'squirrel': squirrel_detail,
     }
+    
     return render(request, 'sightings/update.html', context)
 
 
@@ -42,9 +44,11 @@ def create_sighting(request):
             return redirect("sightings/")
     else:
         form = SightingsForm()
+
     context = {
         'form': form,
     }
+    
     return render(request, 'sightings/add.html', context)
 
 
@@ -56,6 +60,7 @@ def stats(request):
     avg_lat = Squirrel.objects.aggregate(Avg('latitude'))
     avg_long = Squirrel.objects.aggregate(Avg('longitude'))
     above_count = Squirrel.objects.filter(location = 'Above Ground').count()
+    
     context = {
         'total': total,
         'gray_count': gray_count,
@@ -65,5 +70,6 @@ def stats(request):
         'avg_long': avg_long,
         'above_count': above_count,
     }
+    
     return render(request, 'sightings/stats.html', context)
 
