@@ -11,22 +11,22 @@ def index(request):
 
 
 def sightings(request):
-    Squirrels = Squirrel.objects.all()
+    squirrels = Squirrel.objects.all()
     context = {
-        'Squirrels': Squirrels,
+        'squirrels': squirrels,
     }
     return render(request, 'sightings/all_sightings.html', context)
 
 
 def update_sighting(request, unique_squirrel_id):
-    squirrel_detail = get_object_or_404(Squirrel, pk = unique_squirrel_id)
+    squirrel_detail = get_object_or_404(Squirrel, pk=unique_squirrel_id)
     if request.method == 'POST':
-        form = SightingsForm(request.POST, instance = squirrel_detail)
+        form = SightingsForm(request.POST, instance=squirrel_detail)
         if form.is_valid():
             form.save()
             return redirect(f'sightings/{unique_squirrel_id}')
     else:
-        form = SightingsForm(instance = squirrel_detail)
+        form = SightingsForm(instance=squirrel_detail)
     
     context = {
         'form': form,
