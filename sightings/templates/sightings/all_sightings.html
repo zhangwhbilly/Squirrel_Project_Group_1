@@ -47,39 +47,27 @@
     </div>
 	</header>
    <main role="main" class="inner cover">
-      <main role="main">
-      
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron">
-          <div class="container">
-            <h1 class="display-3"> Statistics of Squirrel Sightings<img
-              src="https://i.pinimg.com/originals/97/47/ef/9747ef790bf57a541160d0f0f9ed81f5.png"
-              alt="Squirrels Logo" class="logo" wdth="160" height="120" /></h1>
-              
-	      <h4>We had {{Total}} unique sightings at central park during 2018.</h4>
-              <br>
-
-              <br>
-              Interesting Stats:
-              <ul>
-        	<li>Number of Squirrels with Gray Fur Color: {{Gray_Count}}</li>
-      		<li>Number of Adult Squirrels : {{Adult_Count}}</li>
-      		<li>Number of Squirrels on PM: {{PM_Count}}</li>
-		<li>Number of Squirrels on AM: {{AM_Count}}</li>
-		<li>Average Latitude: {{Avg_Lat}}</li>
-		<li>Number of Squirrels are Above Ground: {{Above_Count}}</li>
-              </ul>
-    
-            </div>
-          </div>
-
-
-          </div>
-        </div>
+        <br>
+        <div id='main-content' class="right-column col-md-12">
+          <ul>
+            {% for squirrel in Squirrel  %}
+            <li style="margin-right:40px; display:inline-block"><a href="{% url 'edit_squirrel' squirrel.unique_squirrel_id %}">{{ squirrel.unique_squirrel_id }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>	
+        <br>
+	<br>
+	<br>
+        <h1 class="cover-heading">Add Your Squirrel Sighting</h1>
+        <br>
 	<footer class="mastfoot mt-auto">
 	    <div class="inner">
 	      <p>Tools For Analytics Squirrel Tracker Project, by <a href="https://www.linkedin.com/in/chengran%EF%BC%88richard%EF%BC%89-jin-26550a159/" target="_blank">Chengran Jin</a> & <a href="https://www.linkedin.com/in/weihao-billy-zhang/" target="_blank">Weihao Zhang</a>.</p>
 	    </div>
+	        <p>
+      Thank you for Visiting!  This web application is contributed by Chengran Jin and Weihao Zhang.
+               </p>
 	  </footer>
 	</body>
-</html>i
+</html>
