@@ -1,18 +1,25 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from map.models import Squirrel
+from .forms import SightingsForm
+from django.db.models import Avg
+from django.http import HttpResponse
 
 
 
-def sightings():
+def index(request):
+    return render(request, 'sightings/index.html', {})        
+
+
+def sightings(request):
     Squirrels = Squirrel.objects.all()
     context = {
         'Squirrels': Squirrels,
     }
-    return render(request, 'sightings/', context)
+    return render(request, 'sightings/all_sightings.html', context)
 
 
-def update_sighting(request):
-    squirrel_detail = get_object_or_404(Squirrel, unique_squirrel_id)
+def update_sighting(request, unique_squirrel_id):
+    squirrel_detail = get_object_or_404(Squirrel, pk = unique_squirrel_id)
     if request.method == 'POST':
         form = SightingsForm(request.POST, instance = squirrel_detail)
         if form.is_valid():
@@ -22,12 +29,13 @@ def update_sighting(request):
             form = SightingsForm(instance = squirrel_detail)
     context = {
         'form': form,
+        'squirrel': squirrel_detail,
     }
     return render(request, 'sightings/update.html', context)
 
 
 def create_sighting(request):
-    if request.method = 'POST':
+    if request.method == 'POST':
         form = SightingsForm(request.POST)
         if form.is_valid():
             form.save()
