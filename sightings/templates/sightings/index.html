@@ -53,9 +53,12 @@
     <div>
       <h3 class="float-md-start mb-0">Group_1</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Admin</a>
-        <a class="nav-link" href="#">Contact</a>
+	<a class="nav-link active" href="sightings/index">Home</a>
+        <a class="nav-link active" href="{% url 'admin:login' %}">Admin</a>
+        <a class="nav-link" href="/sightings/stats">Statistics</a>
+	<a class="nav-link" href="/sightings/add">Add</a>
+        <a class="nav-link" href="/map/">Map</a>
+        <a class="nav-link active" href="mailto:cj2671@columbia.edu">Contact</a>     
       </nav>
     </div>
   </header>
