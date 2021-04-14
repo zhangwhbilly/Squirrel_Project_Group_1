@@ -1,0 +1,86 @@
+{%load static%}
+<!doctype html>
+<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Squirrel Tracker</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">Group 1</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href=/squirrels/>Home</a>
+        <a class="nav-link active" href="{% url 'admin:login' %}">Admin</a>
+        <a class="nav-link active" href="mailto:cj2671@columbia.edu">Contact</a>
+      </nav>
+    </div>
+	</header>
+   <main role="main" class="inner cover">
+      <main role="main">
+      
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+          <div class="container">
+            <h1 class="display-3"> Statistics of Squirrel Sightings<img
+              src="https://i.pinimg.com/originals/97/47/ef/9747ef790bf57a541160d0f0f9ed81f5.png"
+              alt="Squirrels Logo" class="logo" wdth="160" height="120" /></h1>
+              
+	      <h4>We had {{total}} unique sightings at central park during 2018.</h4>
+              <br>
+
+              <br>
+              Interesting Stats:
+              <ul>
+        	<li>Number of Squirrels with Gray Fur Color: {{gray_count}}</li>
+      		<li>Number of Adult Squirrels : {{adult_count}}</li>
+      		<li>Number of Squirrels on PM: {{PM_count}}</li>
+		<li>Number of Squirrels on AM: {{AM_count}}</li>
+		<li>Average Latitude: {{avg_lat}}</li>
+		<li>Average Longitude: {{avg_long}}</li>
+		<li>Number of Squirrels are Above Ground: {{above_count}}</li>
+              </ul>
+    
+            </div>
+          </div>
+
+
+          </div>
+        </div>
+	<footer class="mastfoot mt-auto">
+	    <div class="inner">
+	      <p>Tools For Analytics Squirrel Tracker Project, by <a href="https://www.linkedin.com/in/chengran%EF%BC%88richard%EF%BC%89-jin-26550a159/" target="_blank">Chengran Jin</a> & <a href="https://www.linkedin.com/in/weihao-billy-zhang/" target="_blank">Weihao Zhang</a>.</p>
+	    </div>
+	  </footer>
+	</body>
+</html>i

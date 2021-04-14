@@ -1,0 +1,73 @@
+{%load static%}
+<!doctype html>
+<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Squirrel Tracker</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">Group 1</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href=/squirrels/>Home</a>
+        <a class="nav-link active" href="{% url 'admin:login' %}">Admin</a>
+        <a class="nav-link active" href="mailto:cj2671@columbia.edu">Contact</a>
+      </nav>
+    </div>
+	</header>
+   <main role="main" class="inner cover">
+        <br>
+        <div id='main-content' class="right-column col-md-12">
+          <ul>
+            {% for squirrel in Squirrel  %}
+            <li style="margin-right:40px; display:inline-block"><a href="{% url 'edit_squirrel' squirrel.unique_squirrel_id %}">{{ squirrel.unique_squirrel_id }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>	
+        <br>
+	<br>
+	<br>
+        <h1 class="cover-heading">Add Your Squirrel Sighting</h1>
+        <br>
+	<footer class="mastfoot mt-auto">
+	    <div class="inner">
+	      <p>Tools For Analytics Squirrel Tracker Project, by <a href="https://www.linkedin.com/in/chengran%EF%BC%88richard%EF%BC%89-jin-26550a159/" target="_blank">Chengran Jin</a> & <a href="https://www.linkedin.com/in/weihao-billy-zhang/" target="_blank">Weihao Zhang</a>.</p>
+	    </div>
+	        <p>
+      Thank you for Visiting!  This web application is contributed by Chengran Jin and Weihao Zhang.
+               </p>
+	  </footer>
+	</body>
+</html>
