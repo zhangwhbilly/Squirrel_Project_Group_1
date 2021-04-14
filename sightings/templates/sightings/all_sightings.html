@@ -34,14 +34,20 @@
     <!-- Custom styles for this template -->
     <link href="{% static 'css/cover.css' %}" rel="stylesheet">
   </head>
+
+  
+  
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="masthead mb-auto">
     <div class="inner">
       <h3 class="masthead-brand">Group 1</h3>
       <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href=/squirrels/>Home</a>
+        <a class="nav-link active" href="sightings/index">Home</a>
         <a class="nav-link active" href="{% url 'admin:login' %}">Admin</a>
+        <a class="nav-link" href="/sightings/stats">Statistics</a>
+	<a class="nav-link" href="/sightings/add">Add</a>
+        <a class="nav-link" href="/map/">Map</a>
         <a class="nav-link active" href="mailto:cj2671@columbia.edu">Contact</a>
       </nav>
     </div>
