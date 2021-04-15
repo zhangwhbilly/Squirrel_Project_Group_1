@@ -51,14 +51,17 @@
       </nav>
     </div>
 	</header>
-   <main role="main" class="inner cover">
+    <main role="main" class="inner cover">
         <br>
         <br>
+
+	<div id='main-content' class="right-column col-md-12">
 	  <ul>
           {% for squirrel in squirrels %}
-          <li><a href="{% url 'update' squirrel.unique_squirrel_id %}">{{ squirrel.unique_squirrel_id }}</a></li>
+          <li style="margin-right:40px; display:inline-block"><a href="{% url 'update' squirrel.unique_squirrel_id %}">{{ squirrel.unique_squirrel_id }}</a></li>
           {% endfor %}
           </ul>
+	</div>
 
 	
 	<br>
@@ -66,9 +69,9 @@
         <h1 class="cover-heading">All Squirrel Sightings</h1>
         <br>
 	<footer class="mastfoot mt-auto">
-	        <p>
-      Thank you for Visiting!  This web application is contributed by Chengran Jin and Weihao Zhang.
-               </p>
-	  </footer>
+	    <div class="inner">
+	      <p>Tools For Analytics Squirrel Tracker Project, by <a href="https://www.linkedin.com/in/chengran%EF%BC%88richard%EF%BC%89-jin-26550a159/" target="_blank">Chengran Jin</a> & <a href="https://www.linkedin.com/in/weihao-billy-zhang/" target="_blank">Weihao Zhang</a>.</p>
+	    </div>	  
+	</footer>
 	</body>
 </html>
