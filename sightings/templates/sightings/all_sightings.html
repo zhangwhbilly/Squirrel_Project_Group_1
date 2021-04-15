@@ -44,21 +44,22 @@
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link active" href="/..">Home</a>
         <a class="nav-link active" href="{% url 'admin:login' %}">Admin</a>
-        <a class="nav-link" href="/sightings/stats">Statistics</a>
-	<a class="nav-link" href="/sightings/add">Add</a>
-        <a class="nav-link" href="/map/">Map</a>
+        <a class="nav-link active" href="/sightings/stats">Statistics</a>
+	<a class="nav-link active" href="/sightings/add">Add</a>
+        <a class="nav-link active" href="/map/">Map</a>
         <a class="nav-link active" href="mailto:cj2671@columbia.edu">Contact</a>
       </nav>
     </div>
 	</header>
     <main role="main" class="inner cover">
         <br>
+	<h1 class="cover-heading">All Squirrel Sightings</h1>
         <br>
 
-	<div id='main-content' class="right-column col-md-12">
+	<div id='main-content' class="col-12 col-md-8">
 	  <ul>
           {% for squirrel in squirrels %}
-          <li style="margin-right:40px; display:inline-block"><a href="{% url 'update' squirrel.unique_squirrel_id %}">{{ squirrel.unique_squirrel_id }}</a></li>
+          <li style="margin-right:30px; display:inline-block"><a href="{% url 'update' squirrel.unique_squirrel_id %}">{{ squirrel.unique_squirrel_id }}</a></li>
           {% endfor %}
           </ul>
 	</div>
@@ -66,7 +67,6 @@
 	
 	<br>
 	<br>
-        <h1 class="cover-heading">All Squirrel Sightings</h1>
         <br>
 	<footer class="mastfoot mt-auto">
 	    <div class="inner">
