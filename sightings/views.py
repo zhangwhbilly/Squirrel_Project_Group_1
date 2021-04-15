@@ -24,7 +24,7 @@ def update_sighting(request, unique_squirrel_id):
         form = SightingsForm(request.POST, instance=squirrel_detail)
         if form.is_valid():
             form.save()
-            return redirect(f'sightings/{unique_squirrel_id}')
+            return redirect('sightings')
     else:
         form = SightingsForm(instance=squirrel_detail)
     
