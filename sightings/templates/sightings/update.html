@@ -59,16 +59,7 @@
         <br>
 	<form method="post">
 	 {% csrf_token %}
-	Unique Squirrel ID  {{ form.unique_squirrel_id }} <br><br>
-	Latitude  {{ form.latitude }} <br><br><br>
-	Longitude  {{ form.longitude }} <br><br><br>
-	Shift  {{ form.shift }} <br><br><br>
-	Date  {{ form.date }} <br><br><br>
-	Age  {{ form.age }} <br><br><br>
-	    <br><br> 
-	    <br><br>
-	    <br>
-	    <br>
+	 {{ form.as_p }}
 	    <center>
 	    <input type="submit"  class="btn btn-lg btn-primary" name="Sumbit"> 
 	    <input type="button" class="btn btn-lg btn-primary"  value="Return" onclick="javascript:history.go(-1);"/>
