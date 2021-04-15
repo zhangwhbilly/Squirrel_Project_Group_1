@@ -14,4 +14,4 @@ This Django web application is used to track all the squirrels sightings around 
 UNIS: [cj2671, wz2451]
 
 ##  Link
-Link to website:
+Link to website: https://github.com/zhangwhbilly/Squirrel_Project_Group_1
