@@ -3,37 +3,37 @@ from django.utils.translation import gettext as _
 
 class Squirrel(models.Model):
     unique_squirrel_id = models.CharField(
-        help_text=_('Unique Squirrel Identification Number'),
+        help_text = _('Unique Squirrel Identification Number'),
         max_length = 255,
         primary_key = True,
     )
 
     latitude = models.FloatField(
-        help_text=_('Latitude feature of the point'),
+        help_text = _('Latitude feature of the point'),
         blank = False,
     )
 
     longitude = models.FloatField(
-        help_text=_('Longitude feature of the point'),
+        help_text = _('Longitude feature of the point'),
         blank = False,
     )
 
     AM = 'AM'
     PM = 'PM'
     SHIFT_CHOICES = [   
-        (AM,_('AM')),
-        (PM,_('PM')),
+        (AM, _('AM')),
+        (PM, _('PM')),
     ]
 
     shift = models.CharField(
-        help_text=_('Shift'),
-        choices=SHIFT_CHOICES,
+        help_text = _('Shift'),
+        choices = SHIFT_CHOICES,
         max_length = 255,
         blank = False,
     )
     
     date = models.DateField(
-            help_text=_('Date'),
+            help_text = _('Date'),
             null = True,
             blank = False,
         )
@@ -42,14 +42,14 @@ class Squirrel(models.Model):
     JUVENILE = 'Juvenile'
     
     AGE_CHOICES = (
-        (ADULT, 'Adult'),
-        (JUVENILE, 'Juvenile'),
+        (ADULT, _('Adult')),
+        (JUVENILE, _('Juvenile')),
     )
     
     age = models.CharField(
-            help_text=_('Age is a choice between Adult and Juvenile'),
-            max_length=50,
-            choices=AGE_CHOICES,
+            help_text = _('Age is a choice between Adult and Juvenile'),
+            max_length = 50,
+            choices = AGE_CHOICES,
             null = True,
             blank = False,
         )
@@ -59,15 +59,15 @@ class Squirrel(models.Model):
     CINNAMON = 'Cinnamon'
 
     COLOR_CHOICES = (
-        (GRAY, 'Gray'),    
-        (BLACK, 'Black'),
-        (CINNAMON, 'Cinnamon'),
+        (GRAY, _('Gray')),    
+        (BLACK, _('Black')),
+        (CINNAMON, _('Cinnamon')),
     )
 
 
 
     primary_fur_color = models.CharField(
-            help_text=_('Primary Fur Color'),
+            help_text = _('Primary Fur Color'),
             max_length = 50,
             choices = COLOR_CHOICES,
             null = True,
@@ -79,12 +79,12 @@ class Squirrel(models.Model):
     ABOVE = 'Above Ground'
 
     LOCATION_CHOICE= (
-            (GROUND, 'Ground Plane'),
-            (ABOVE, 'Above Ground'),
+            (GROUND, _('Ground Plane')),
+            (ABOVE, _('Above Ground')),
         )
 
     location = models.CharField(
-            help_text=_('Location of the squirrels'),
+            help_text = _('Location of the squirrels'),
             choices = LOCATION_CHOICE,
             max_length = 50,
             null = True,
@@ -92,69 +92,69 @@ class Squirrel(models.Model):
         )
 
     specific_location = models.CharField(
-            help_text=_('Specific location of the squirrels'),
+            help_text = _('Specific location of the squirrels'),
             max_length = 255,
             null = True,
             blank = True,
         )
 
     running = models.BooleanField(
-            help_text=_('If the squirrel status is running'),
+            help_text = _('If the squirrel status is running'),
         )
 
     chasing = models.BooleanField(
-            help_text=_('If the squirrel status is chasing'),
+            help_text = _('If the squirrel status is chasing'),
          )
 
     climbing = models.BooleanField(
-            help_text=_('If the squirrel status is climbing'),
+            help_text = _('If the squirrel status is climbing'),
         )
 
     eating = models.BooleanField(
-            help_text=_('If the squirrel status is eating'),
+            help_text = _('If the squirrel status is eating'),
         )
      
     foraging = models.BooleanField(
-            help_text=_('If the squirrel status is foraging'),
+            help_text = _('If the squirrel status is foraging'),
         )
      
     other_activities = models.CharField(
-            help_text=_('Other activities'),
+            help_text = _('Other activities'),
             max_length = 255,
             null = True,
-            blank=True,
+            blank = True,
         )
             
     kuks = models.BooleanField(
-            help_text=_('If the squirrel status was heard kuking'),
+            help_text = _('If the squirrel status was heard kuking'),
         )
         
     quaas = models.BooleanField(
-            help_text=_('If the squirrel status was heard quaaing'),
+            help_text = _('If the squirrel status was heard quaaing'),
         )
      
     moans = models.BooleanField(
-            help_text=_('If the squirrel status was heard moaning'),
+            help_text = _('If the squirrel status was heard moaning'),
         )
             
     tail_flags = models.BooleanField(
-            help_text=_('If the squirrel status was flaging its tail'),
+            help_text = _('If the squirrel status was flaging its tail'),
         )
             
     tail_twitching = models.BooleanField(
-            help_text=_('If the squirrel status was twitching its tail'),
+            help_text = _('If the squirrel status was twitching its tail'),
         )
             
     approaches = models.BooleanField(
-            help_text=_('If the squirrel status was approaching the observer'),
+            help_text = _('If the squirrel status was approaching the observer'),
         )
             
     indifferent = models.BooleanField(
-            help_text=_('If the squirrel status was indifferent to the observer'),
+            help_text = _('If the squirrel status was indifferent to the observer'),
         )
 
     runs_from = models.BooleanField(
-            help_text=_('If the squirrel status was running from the observer'),
+            help_text = _('If the squirrel status was running from the observer'),
         )    
 
     def __str__(self):
