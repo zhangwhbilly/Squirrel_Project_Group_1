@@ -55,11 +55,12 @@ def create_sighting(request):
 def stats(request):
     total = Squirrel.objects.all().count()
     gray_count = Squirrel.objects.filter(primary_fur_color = 'Gray').count()
-    adult_count = Squirrel.objects.filter(shift = 'Adult').count()
+    adult_count = Squirrel.objects.filter(age = 'Adult').count()
     PM_count = Squirrel.objects.filter(shift = 'PM').count()
     AM_count = Squirrel.objects.filter(shift = 'AM').count()
-    avg_lat = Squirrel.objects.aggregate(Avg('latitude'))
-    avg_long = Squirrel.objects.aggregate(Avg('longitude'))
+    avg_lat_long = Squirrel.objects.values()
+    avg_lat = Squirrel.objects.aggregate(avg=Avg('latitude'))
+    avg_long = Squirrel.objects.aggregate(avg=Avg('longitude'))
     above_count = Squirrel.objects.filter(location = 'Above Ground').count()
     
     context = {
