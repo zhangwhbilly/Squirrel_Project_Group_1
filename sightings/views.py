@@ -24,7 +24,7 @@ def update_sighting(request, unique_squirrel_id):
         form = SightingsForm(request.POST, instance=squirrel_detail)
         if form.is_valid():
             form.save()
-            return redirect(f'sightings/{unique_squirrel_id}')
+            return redirect('sightings')
     else:
         form = SightingsForm(instance=squirrel_detail)
     
@@ -41,7 +41,7 @@ def create_sighting(request):
         form = SightingsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("sightings/")
+            return redirect("sightings")
     else:
         form = SightingsForm()
 
@@ -55,6 +55,7 @@ def create_sighting(request):
 def stats(request):
     total = Squirrel.objects.all().count()
     gray_count = Squirrel.objects.filter(primary_fur_color = 'Gray').count()
+    adult_count = Squirrel.objects.filter(shift = 'Adult').count()
     PM_count = Squirrel.objects.filter(shift = 'PM').count()
     AM_count = Squirrel.objects.filter(shift = 'AM').count()
     avg_lat = Squirrel.objects.aggregate(Avg('latitude'))
@@ -64,6 +65,7 @@ def stats(request):
     context = {
         'total': total,
         'gray_count': gray_count,
+        'adult_count': adult_count,
         'PM_count': PM_count,
         'AM_count': AM_count,
         'avg_lat': avg_lat,
